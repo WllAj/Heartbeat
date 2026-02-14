@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Heartbeat</title>
+  
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: #00ff00;
+      font-size: 55px;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px #00ff00,
+        0 0 25px #00ff00,
+        0 0 60px #00ff00;
+    }
+    
+    svg {
+      width: 90%;
+      max-width: 1100px;
+    }
+    
+    .heartbeat {
+      fill: none;
+      stroke: #00ff00;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 6px #00ff00) drop-shadow(0 0 20px #00ff00) drop-shadow(0 0 40px #00ff00);
+      
+      stroke-dasharray: 2500;
+      stroke-dashoffset: 2500;
+      animation: draw 4s linear infinite;
+    }
+    
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <h1>Heartbeat</h1>
+  
+  <svg viewBox="0 0 1200 300">
+  
+    <path class="heartbeat" d="
+  M0 150
+  L250 150
+
+  L300 120
+  L330 170
+  L360 60
+  L390 240
+  L420 150
+
+  L550 150
+
+  C570 130, 610 100, 650 130
+  C690 100, 730 130, 750 150
+  C730 180, 690 210, 650 225
+  C610 210, 570 180, 550 150
+
+  L1200 150
+  " />
+    
+  </svg>
+  
+</body>
+
+</html>
